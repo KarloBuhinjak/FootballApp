@@ -273,6 +273,19 @@
         "runtime": {
           "bin/placeholder/FootballAppSolution.Model.dll": {}
         }
+      },
+      "FootballAppSolution.Repository.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FootballAppSolution.Repository.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballAppSolution.Repository.Common.dll": {}
+        }
       }
     }
   },
@@ -697,11 +710,17 @@
       "type": "project",
       "path": "../FootballAppSolution.Model/FootballAppSolution.Model.csproj",
       "msbuildProject": "../FootballAppSolution.Model/FootballAppSolution.Model.csproj"
+    },
+    "FootballAppSolution.Repository.Common/1.0.0": {
+      "type": "project",
+      "path": "../FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj",
+      "msbuildProject": "../FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
       "FootballAppSolution.Model >= 1.0.0",
+      "FootballAppSolution.Repository.Common >= 1.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.0-preview.3"
     ]
   },
@@ -732,6 +751,9 @@
           "projectReferences": {
             "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj": {
               "projectPath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj"
+            },
+            "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj": {
+              "projectPath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj"
             }
           }
         }

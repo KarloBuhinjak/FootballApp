@@ -16,3 +16,7 @@
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/obj/Debug/net8.0/refint/FootballAppSolution.Service.dll
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/obj/Debug/net8.0/FootballAppSolution.Service.pdb
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/obj/Debug/net8.0/ref/FootballAppSolution.Service.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/bin/Debug/net8.0/FootballAppSolution.Repository.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/bin/Debug/net8.0/FootballAppSolution.Service.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/bin/Debug/net8.0/FootballAppSolution.Service.Common.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service/bin/Debug/net8.0/FootballAppSolution.Repository.Common.pdb

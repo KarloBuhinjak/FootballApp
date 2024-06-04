@@ -2,37 +2,39 @@ using FootballAppSolution.Repository;
 using System;
 using System.Collections.Generic;
 using FootballAppSolution.Model;
+using FootballAppSolution.Service.Common;
 
 namespace FootballAppSolution.Service
 {
-    public class PlayerService
+    public class PlayerService: IFootballAppService
+
     {
-        PlayerRepository playerRepository = new PlayerRepository();
-        
-        public void AddPlayer(Player player)
-        {
-            player.Id = Guid.NewGuid(); 
-            playerRepository.AddPlayer(player);
-        }
+    PlayerRepository playerRepository = new PlayerRepository();
 
-        public IEnumerable<Player> GetAllPlayers()
-        {
-            return playerRepository.GetAllPlayers();
-        }
+    public void AddPlayer(Player player)
+    {
+        player.Id = Guid.NewGuid();
+        playerRepository.AddPlayer(player);
+    }
 
-        public Player GetPlayer(Guid id)
-        {
-            return playerRepository.GetPlayer(id);
-        }
+    public IEnumerable<Player> GetAllPlayers()
+    {
+        return playerRepository.GetAllPlayers();
+    }
 
-        public void UpdatePlayer(Player player)
-        {
-            playerRepository.UpdatePlayer(player);
-        }
+    public Player GetPlayer(Guid id)
+    {
+        return playerRepository.GetPlayer(id);
+    }
 
-        public void DeletePlayer(Guid id)
-        {
-            playerRepository.DeletePlayer(id);
-        }
+    public void UpdatePlayer(Player player)
+    {
+        playerRepository.UpdatePlayer(player);
+    }
+
+    public void DeletePlayer(Guid id)
+    {
+        playerRepository.DeletePlayer(id);
+    }
     }
 }

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "FootballAppSolution.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/FootballAppSolution.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballAppSolution.Model.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FootballAppSolution.Model/1.0.0": {
+      "type": "project",
+      "path": "../FootballAppSolution.Model/FootballAppSolution.Model.csproj",
+      "msbuildProject": "../FootballAppSolution.Model/FootballAppSolution.Model.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "FootballAppSolution.Model >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "/Users/karlobuhinjak/.nuget/packages/": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj": {
+              "projectPath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

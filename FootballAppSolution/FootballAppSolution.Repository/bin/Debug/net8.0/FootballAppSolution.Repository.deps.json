@@ -9,6 +9,7 @@
       "FootballAppSolution.Repository/1.0.0": {
         "dependencies": {
           "FootballAppSolution.Model": "1.0.0",
+          "FootballAppSolution.Repository.Common": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0-preview.3"
         },
         "runtime": {
@@ -179,6 +180,14 @@
         "runtime": {
           "FootballAppSolution.Model.dll": {}
         }
+      },
+      "FootballAppSolution.Repository.Common/1.0.0": {
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "runtime": {
+          "FootballAppSolution.Repository.Common.dll": {}
+        }
       }
     }
   },
@@ -294,6 +303,11 @@
       "hashPath": "npgsql.entityframeworkcore.postgresql.9.0.0-preview.3.nupkg.sha512"
     },
     "FootballAppSolution.Model/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballAppSolution.Repository.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

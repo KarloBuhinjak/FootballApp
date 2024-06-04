@@ -9,7 +9,8 @@
       "FootballAppSolution.Service/1.0.0": {
         "dependencies": {
           "FootballAppSolution.Model": "1.0.0",
-          "FootballAppSolution.Repository": "1.0.0"
+          "FootballAppSolution.Repository": "1.0.0",
+          "FootballAppSolution.Service.Common": "1.0.0"
         },
         "runtime": {
           "FootballAppSolution.Service.dll": {}
@@ -183,10 +184,27 @@
       "FootballAppSolution.Repository/1.0.0": {
         "dependencies": {
           "FootballAppSolution.Model": "1.0.0",
+          "FootballAppSolution.Repository.Common": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0-preview.3"
         },
         "runtime": {
           "FootballAppSolution.Repository.dll": {}
+        }
+      },
+      "FootballAppSolution.Repository.Common/1.0.0": {
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "runtime": {
+          "FootballAppSolution.Repository.Common.dll": {}
+        }
+      },
+      "FootballAppSolution.Service.Common/1.0.0": {
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "runtime": {
+          "FootballAppSolution.Service.Common.dll": {}
         }
       }
     }
@@ -308,6 +326,16 @@
       "sha512": ""
     },
     "FootballAppSolution.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballAppSolution.Repository.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballAppSolution.Service.Common/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

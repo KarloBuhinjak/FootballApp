@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FootballAppSolution.Model\FootballAppSolution.Model.csproj" />
     <ProjectReference Include="..\FootballAppSolution.Repository\FootballAppSolution.Repository.csproj" />
+    <ProjectReference Include="..\FootballAppSolution.Service.Common\FootballAppSolution.Service.Common.csproj" />
   </ItemGroup>
 
 </Project>

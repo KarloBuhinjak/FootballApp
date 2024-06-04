@@ -385,6 +385,7 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "FootballAppSolution.Model": "1.0.0",
+          "FootballAppSolution.Repository.Common": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0-preview.3"
         },
         "compile": {
@@ -394,18 +395,45 @@
           "bin/placeholder/FootballAppSolution.Repository.dll": {}
         }
       },
+      "FootballAppSolution.Repository.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FootballAppSolution.Repository.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballAppSolution.Repository.Common.dll": {}
+        }
+      },
       "FootballAppSolution.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "FootballAppSolution.Model": "1.0.0",
-          "FootballAppSolution.Repository": "1.0.0"
+          "FootballAppSolution.Repository": "1.0.0",
+          "FootballAppSolution.Service.Common": "1.0.0"
         },
         "compile": {
           "bin/placeholder/FootballAppSolution.Service.dll": {}
         },
         "runtime": {
           "bin/placeholder/FootballAppSolution.Service.dll": {}
+        }
+      },
+      "FootballAppSolution.Service.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "FootballAppSolution.Model": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FootballAppSolution.Service.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballAppSolution.Service.Common.dll": {}
         }
       }
     }
@@ -1178,10 +1206,20 @@
       "path": "../FootballAppSolution.Repository/FootballAppSolution.Repository.csproj",
       "msbuildProject": "../FootballAppSolution.Repository/FootballAppSolution.Repository.csproj"
     },
+    "FootballAppSolution.Repository.Common/1.0.0": {
+      "type": "project",
+      "path": "../FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj",
+      "msbuildProject": "../FootballAppSolution.Repository.Common/FootballAppSolution.Repository.Common.csproj"
+    },
     "FootballAppSolution.Service/1.0.0": {
       "type": "project",
       "path": "../FootballAppSolution.Service/FootballAppSolution.Service.csproj",
       "msbuildProject": "../FootballAppSolution.Service/FootballAppSolution.Service.csproj"
+    },
+    "FootballAppSolution.Service.Common/1.0.0": {
+      "type": "project",
+      "path": "../FootballAppSolution.Service.Common/FootballAppSolution.Service.Common.csproj",
+      "msbuildProject": "../FootballAppSolution.Service.Common/FootballAppSolution.Service.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {

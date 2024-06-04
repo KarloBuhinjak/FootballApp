@@ -2,10 +2,11 @@ using FootballAppSolution.Model;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using FootballAppSolution.Repository.Common;
 
 namespace FootballAppSolution.Repository
 {
-    public class PlayerRepository
+    public class PlayerRepository: IFootballAppRepository
     {
         private readonly string connectionString = "Host=localhost;Port=5432;Database=Football;Username=postgres;Password=lozinka;";
 

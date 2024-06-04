@@ -1,0 +1,16 @@
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/bin/Debug/net8.0/FootballAppSolution.Service.Common.deps.json
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/bin/Debug/net8.0/FootballAppSolution.Service.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/bin/Debug/net8.0/FootballAppSolution.Service.Common.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/bin/Debug/net8.0/FootballAppSolution.Model.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/bin/Debug/net8.0/FootballAppSolution.Model.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.csproj.AssemblyReference.cache
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.GeneratedMSBuildEditorConfig.editorconfig
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.AssemblyInfoInputs.cache
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.AssemblyInfo.cs
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.csproj.CoreCompileInputs.cache
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.sourcelink.json
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/Football.761AF284.Up2Date
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/refint/FootballAppSolution.Service.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/FootballAppSolution.Service.Common.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Service.Common/obj/Debug/net8.0/ref/FootballAppSolution.Service.Common.dll
