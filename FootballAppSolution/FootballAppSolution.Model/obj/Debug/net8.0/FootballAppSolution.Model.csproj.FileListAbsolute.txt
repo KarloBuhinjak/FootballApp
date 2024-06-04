@@ -1,0 +1,12 @@
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/bin/Debug/net8.0/FootballAppSolution.Model.deps.json
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/bin/Debug/net8.0/FootballAppSolution.Model.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/bin/Debug/net8.0/FootballAppSolution.Model.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.GeneratedMSBuildEditorConfig.editorconfig
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.AssemblyInfoInputs.cache
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.AssemblyInfo.cs
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.csproj.CoreCompileInputs.cache
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.sourcelink.json
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/refint/FootballAppSolution.Model.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/FootballAppSolution.Model.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/obj/Debug/net8.0/ref/FootballAppSolution.Model.dll

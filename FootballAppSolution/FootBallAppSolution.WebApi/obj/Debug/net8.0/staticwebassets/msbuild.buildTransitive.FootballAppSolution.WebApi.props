@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/FootballAppSolution.WebApi.props" />
+</Project>
