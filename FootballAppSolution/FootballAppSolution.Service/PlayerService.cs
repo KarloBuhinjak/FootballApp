@@ -27,6 +27,11 @@ namespace FootballAppSolution.Service
         return await playerRepository.GetPlayer(id);
     }
 
+    public async Task<IActionResult> GetFilteredPlayers()
+    {
+        
+    }
+
     public  async Task UpdatePlayer(Player player)
     {
         await playerRepository.UpdatePlayer(player);
