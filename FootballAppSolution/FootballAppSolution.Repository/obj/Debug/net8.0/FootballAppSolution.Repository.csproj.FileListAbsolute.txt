@@ -16,3 +16,5 @@
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository/obj/Debug/net8.0/ref/FootballAppSolution.Repository.dll
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository/bin/Debug/net8.0/FootballAppSolution.Repository.Common.dll
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository/bin/Debug/net8.0/FootballAppSolution.Repository.Common.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository/bin/Debug/net8.0/FootballAppSolution.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Repository/bin/Debug/net8.0/FootballAppSolution.Common.pdb

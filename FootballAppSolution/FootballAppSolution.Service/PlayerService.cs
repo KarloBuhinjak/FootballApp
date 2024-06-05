@@ -1,6 +1,7 @@
 using FootballAppSolution.Repository;
 using System;
 using System.Collections.Generic;
+using FootballAppSolution.Common;
 using FootballAppSolution.Model;
 using FootballAppSolution.Service.Common;
 
@@ -27,9 +28,10 @@ namespace FootballAppSolution.Service
         return await playerRepository.GetPlayer(id);
     }
 
-    public async Task<IActionResult> GetFilteredPlayers()
+    public async Task<IEnumerable<Player>> GetFilteredPlayers(PlayerFiltering filtering, PlayerSorting sorting, PlayerPaging paging)
     {
-        
+        return await playerRepository.GetFilteredPlayers(filtering, sorting, paging);
+
     }
 
     public  async Task UpdatePlayer(Player player)

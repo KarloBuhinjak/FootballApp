@@ -264,6 +264,16 @@
           }
         }
       },
+      "FootballAppSolution.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/FootballAppSolution.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballAppSolution.Common.dll": {}
+        }
+      },
       "FootballAppSolution.Model/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -278,6 +288,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "FootballAppSolution.Common": "1.0.0",
           "FootballAppSolution.Model": "1.0.0"
         },
         "compile": {
@@ -706,6 +717,11 @@
         "postgresql.png"
       ]
     },
+    "FootballAppSolution.Common/1.0.0": {
+      "type": "project",
+      "path": "../FootballAppSolution.Common/FootballAppSolution.Common.csproj",
+      "msbuildProject": "../FootballAppSolution.Common/FootballAppSolution.Common.csproj"
+    },
     "FootballAppSolution.Model/1.0.0": {
       "type": "project",
       "path": "../FootballAppSolution.Model/FootballAppSolution.Model.csproj",
@@ -719,6 +735,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "FootballAppSolution.Common >= 1.0.0",
       "FootballAppSolution.Model >= 1.0.0",
       "FootballAppSolution.Repository.Common >= 1.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.0-preview.3"
@@ -749,6 +766,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Common/FootballAppSolution.Common.csproj": {
+              "projectPath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Common/FootballAppSolution.Common.csproj"
+            },
             "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj": {
               "projectPath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.Model/FootballAppSolution.Model.csproj"
             },
