@@ -6,10 +6,10 @@ namespace FootballAppSolution.Repository.Common
 {
     public interface IFootballAppRepository
     {
-        void AddPlayer(Player player);
-        IEnumerable<Player> GetAllPlayers();
-        Player GetPlayer(Guid id);
-        void UpdatePlayer(Player player);
-        void DeletePlayer(Guid id);
+        Task AddPlayer(Player player);
+        Task<IEnumerable<Player>> GetAllPlayers();
+        Task<Player> GetPlayer(Guid id);
+        Task UpdatePlayer(Player player);
+        Task DeletePlayer(Guid id);
     }
 }

@@ -11,30 +11,35 @@ namespace FootballAppSolution.Service
     {
     PlayerRepository playerRepository = new PlayerRepository();
 
-    public void AddPlayer(Player player)
+    public async Task AddPlayer(Player player)
     {
         player.Id = Guid.NewGuid();
-        playerRepository.AddPlayer(player);
+        await playerRepository.AddPlayer(player);
     }
 
-    public IEnumerable<Player> GetAllPlayers()
+    public async Task<IEnumerable<Player>> GetAllPlayers()
     {
-        return playerRepository.GetAllPlayers();
+        return await playerRepository.GetAllPlayers();
     }
 
-    public Player GetPlayer(Guid id)
+    public async Task<Player> GetPlayer(Guid id)
     {
-        return playerRepository.GetPlayer(id);
+        return await playerRepository.GetPlayer(id);
     }
 
-    public void UpdatePlayer(Player player)
+    public async Task<IActionResult> GetFilteredPlayers()
     {
-        playerRepository.UpdatePlayer(player);
+        
     }
 
-    public void DeletePlayer(Guid id)
+    public  async Task UpdatePlayer(Player player)
     {
-        playerRepository.DeletePlayer(id);
+        await playerRepository.UpdatePlayer(player);
+    }
+
+    public  async Task DeletePlayer(Guid id)
+    {
+        await playerRepository.DeletePlayer(id);
     }
     }
 }
