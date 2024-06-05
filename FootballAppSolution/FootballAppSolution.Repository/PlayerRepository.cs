@@ -84,10 +84,9 @@ namespace FootballAppSolution.Repository
         public async Task<IEnumerable<Player>> GetFilteredPlayers(PlayerFiltering filtering, PlayerSorting sorting,
             PlayerPaging paging)
         {
-                     // Kreirajte SQL upit na osnovu primljenih parametara za filtriranje, sortiranje i paginaciju
+                    
             var queryBuilder = new StringBuilder("SELECT * FROM \"Player\" WHERE 1 = 1");
-
-            // Dodajte uslove filtriranja u upit
+            
             if (filtering.NameId != null)
             {
                 queryBuilder.Append(" AND \"Id\" = @NameId");
@@ -104,21 +103,17 @@ namespace FootballAppSolution.Repository
             {
                 queryBuilder.Append(" AND \"ClubId\" IN (SELECT \"Id\" FROM \"Club\" WHERE \"Id\" = @ClubName)");
             }
-
-            // Dodajte logiku za sortiranje
+            
             queryBuilder.Append($" ORDER BY \"{sorting.SortBy}\" {sorting.SortOrder}");
-
-            // Dodajte logiku za paginaciju
+            
             queryBuilder.Append($" OFFSET {paging.PageSize * (paging.PageNumber - 1)} LIMIT {paging.PageSize};");
-
-            // Izvršite SQL upit
+            
             using var connection = new NpgsqlConnection(connectionString);
             var players = new List<Player>();
 
             await connection.OpenAsync();
             using var command = new NpgsqlCommand(queryBuilder.ToString(), connection);
-
-            // Postavite parametre za SQL upit
+            
             if (filtering.NameId != null)
             {
                 command.Parameters.AddWithValue("@NameId", filtering.NameId);

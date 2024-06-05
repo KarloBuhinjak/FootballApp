@@ -68,9 +68,10 @@ namespace FootballAppSolution.WebApi.Controllers
             }
         }
         
-        [HttpGet("players/{nameId}/{age}/{position}/{clubId}/{sortBy}/{sortOrder}/{pageNumber}/{pageSize}")]
-        public async Task<IActionResult> GetFilteredPlayers(Guid? nameId, int? age, string? position, Guid? clubId, string sortBy, string sortOrder, int pageNumber, int pageSize)
+        [HttpGet("/players")]
+        public async Task<IActionResult> GetFilteredPlayers([FromQuery] Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
+            
             try
             {
                 var filtering = new PlayerFiltering
