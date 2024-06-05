@@ -13,21 +13,21 @@ namespace FootballAppSolution.WebApi.Controllers
         PlayerService playerService = new PlayerService();
         
         [HttpPost]
-        public IActionResult AddPlayer([FromBody] Player player)
+        public async Task<IActionResult> AddPlayer([FromBody] Player player)
         {
             if (player == null)
             {
                 return BadRequest("Player data is null.");
             }
 
-            playerService.AddPlayer(player);
+            await playerService.AddPlayer(player);
             return Ok("Player added successfully.");
         }
 
         [HttpGet]
-        public IActionResult GetAllPlayers()
+        public async Task<IActionResult>  GetAllPlayers()
         {
-            var players = playerService.GetAllPlayers();
+            var players = await playerService.GetAllPlayers();
             if (players == null || players.Count() == 0)
             {
                 return NoContent();
@@ -36,9 +36,9 @@ namespace FootballAppSolution.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetPlayer(Guid id)
+        public async Task<IActionResult> GetPlayer(Guid id)
         {
-            var player = playerService.GetPlayer(id);
+            var player = await playerService.GetPlayer(id);
             if (player == null)
             {
                 return NotFound();
@@ -46,10 +46,11 @@ namespace FootballAppSolution.WebApi.Controllers
             return Ok(player);
         }
 
+
         [HttpPut("{id}")]
-        public IActionResult UpdatePlayer(Guid id, [FromBody] Player updatedPlayer)
+        public async Task<IActionResult> UpdatePlayer(Guid id, [FromBody] Player updatedPlayer)
         {
-            var player = playerService.GetPlayer(id);
+            var player = await playerService.GetPlayer(id);
             if (player == null)
             {
                 return NotFound();
@@ -61,15 +62,15 @@ namespace FootballAppSolution.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeletePlayer(Guid id)
+        public async Task<IActionResult> DeletePlayer(Guid id)
         {
-            var player = playerService.GetPlayer(id);
+            var player = await playerService.GetPlayer(id);
             if (player == null)
             {
                 return NotFound();
             }
 
-            playerService.DeletePlayer(id);
+            await playerService.DeletePlayer(id);
             return Ok("Player deleted successfully.");
         }
     }

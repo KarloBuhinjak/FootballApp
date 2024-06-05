@@ -2,6 +2,7 @@ using FootballAppSolution.Model;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using FootballAppSolution.Repository.Common;
 
 namespace FootballAppSolution.Repository
@@ -10,35 +11,35 @@ namespace FootballAppSolution.Repository
     {
         private readonly string connectionString = "Host=localhost;Port=5432;Database=Football;Username=postgres;Password=lozinka;";
 
-        public void AddPlayer(Player player)
+        public async Task AddPlayer(Player player)
         {
-            using var connection = new NpgsqlConnection(connectionString);
-            connection.Open();
+            await using var connection = new NpgsqlConnection(connectionString);
+            await  connection.OpenAsync();
 
             var commandText = "INSERT INTO \"Player\" (\"Id\", \"Name\", \"Age\", \"Position\", \"ClubId\") VALUES (@Id, @Name, @Age, @Position, @ClubId);";
 
-            using var command = new NpgsqlCommand(commandText, connection);
+            await using var command = new NpgsqlCommand(commandText, connection);
             command.Parameters.AddWithValue("@Id", player.Id);
             command.Parameters.AddWithValue("@Name", player.Name);
             command.Parameters.AddWithValue("@Age", player.Age);
             command.Parameters.AddWithValue("@Position", player.Position);
             command.Parameters.AddWithValue("@ClubId", player.ClubId);
 
-            command.ExecuteNonQuery();
+            await command.ExecuteNonQueryAsync();
         }
 
-        public IEnumerable<Player> GetAllPlayers()
+        public async Task<IEnumerable<Player>> GetAllPlayers()
         {
             var players = new List<Player>();
 
-            using var connection = new NpgsqlConnection(connectionString);
+            await using var connection = new NpgsqlConnection(connectionString);
             var commandText = "SELECT * FROM \"Player\";";
 
-            using var command = new NpgsqlCommand(commandText, connection);
-            connection.Open();
-            using var reader = command.ExecuteReader();
-
-            while (reader.Read())
+            await using var command = new NpgsqlCommand(commandText, connection);
+            await connection.OpenAsync();
+            await using var reader = await command.ExecuteReaderAsync();
+            
+            while (await reader.ReadAsync())
             {
                 var player = new Player
                 {
@@ -54,16 +55,16 @@ namespace FootballAppSolution.Repository
             return players;
         }
 
-        public Player GetPlayer(Guid id)
+        public async Task<Player> GetPlayer(Guid id)
         {
-            using var connection = new NpgsqlConnection(connectionString);
+            await using var connection = new NpgsqlConnection(connectionString);
             var commandText = "SELECT * FROM \"Player\" WHERE \"Id\" = @Id;";
-            using var command = new NpgsqlCommand(commandText, connection);
+            await using var command = new NpgsqlCommand(commandText, connection);
             command.Parameters.AddWithValue("@Id", id);
 
-            connection.Open();
-            using var reader = command.ExecuteReader();
-            if (reader.Read())
+            await connection.OpenAsync();
+            await using var reader = await command.ExecuteReaderAsync();
+            if (await reader.ReadAsync())
             {
                 return new Player
                 {
@@ -78,30 +79,31 @@ namespace FootballAppSolution.Repository
             return null;
         }
 
-        public void UpdatePlayer(Player player)
+        public async Task UpdatePlayer(Player player)
         {
-            using var connection = new NpgsqlConnection(connectionString);
+            await using var connection = new NpgsqlConnection(connectionString);
             var commandText = "UPDATE \"Player\" SET \"Name\" = @Name, \"Age\" = @Age, \"Position\" = @Position, \"ClubId\" = @ClubId WHERE \"Id\" = @Id;";
-            using var command = new NpgsqlCommand(commandText, connection);
+            await using var command = new NpgsqlCommand(commandText, connection);
             command.Parameters.AddWithValue("@Id", player.Id);
             command.Parameters.AddWithValue("@Name", player.Name);
             command.Parameters.AddWithValue("@Age", player.Age);
             command.Parameters.AddWithValue("@Position", player.Position);
             command.Parameters.AddWithValue("@ClubId", player.ClubId);
 
-            connection.Open();
-            command.ExecuteNonQuery();
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
+
         }
 
-        public void DeletePlayer(Guid id)
+        public async Task DeletePlayer(Guid id)
         {
-            using var connection = new NpgsqlConnection(connectionString);
+            await using var connection = new NpgsqlConnection(connectionString);
             var commandText = "DELETE FROM \"Player\" WHERE \"Id\" = @Id;";
-            using var command = new NpgsqlCommand(commandText, connection);
+            await using var command = new NpgsqlCommand(commandText, connection);
             command.Parameters.AddWithValue("@Id", id);
 
-            connection.Open();
-            command.ExecuteNonQuery();
+            await connection.OpenAsync();
+            await command.ExecuteNonQueryAsync();
         }
     }
 }

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballAppSolution.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballAppSolution.Repository.Common", "FootballAppSolution.Repository.Common\FootballAppSolution.Repository.Common.csproj", "{D163525E-57EE-49CB-A417-D24C823C31B9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballAppSolution.Common", "FootballAppSolution.Common\FootballAppSolution.Common.csproj", "{4C76C6DF-8DAB-4E82-8A74-56E57E7DBA24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{D163525E-57EE-49CB-A417-D24C823C31B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D163525E-57EE-49CB-A417-D24C823C31B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D163525E-57EE-49CB-A417-D24C823C31B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C76C6DF-8DAB-4E82-8A74-56E57E7DBA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C76C6DF-8DAB-4E82-8A74-56E57E7DBA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C76C6DF-8DAB-4E82-8A74-56E57E7DBA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C76C6DF-8DAB-4E82-8A74-56E57E7DBA24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
