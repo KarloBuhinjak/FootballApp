@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "FootballAppSolution.Repository/1.0.0": {
         "dependencies": {
+          "FootballAppSolution.Common": "1.0.0",
           "FootballAppSolution.Model": "1.0.0",
           "FootballAppSolution.Repository.Common": "1.0.0",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.0-preview.3"
@@ -176,6 +177,11 @@
           }
         }
       },
+      "FootballAppSolution.Common/1.0.0": {
+        "runtime": {
+          "FootballAppSolution.Common.dll": {}
+        }
+      },
       "FootballAppSolution.Model/1.0.0": {
         "runtime": {
           "FootballAppSolution.Model.dll": {}
@@ -183,6 +189,7 @@
       },
       "FootballAppSolution.Repository.Common/1.0.0": {
         "dependencies": {
+          "FootballAppSolution.Common": "1.0.0",
           "FootballAppSolution.Model": "1.0.0"
         },
         "runtime": {
@@ -301,6 +308,11 @@
       "sha512": "sha512-Sz5kSLAiBc5YMJ964awdWTZUXsWUizfxqe4mAvlakCw5xtgxXXeT5qOzlRKFFavmquKlVl830BDGfQ4jMbXtwA==",
       "path": "npgsql.entityframeworkcore.postgresql/9.0.0-preview.3",
       "hashPath": "npgsql.entityframeworkcore.postgresql.9.0.0-preview.3.nupkg.sha512"
+    },
+    "FootballAppSolution.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "FootballAppSolution.Model/1.0.0": {
       "type": "project",

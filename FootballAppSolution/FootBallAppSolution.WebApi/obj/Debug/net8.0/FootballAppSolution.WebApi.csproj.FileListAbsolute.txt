@@ -56,3 +56,5 @@
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Service.Common.dll
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Repository.Common.pdb
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Service.Common.pdb
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Common.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Common.pdb

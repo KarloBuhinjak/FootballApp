@@ -3,6 +3,7 @@ using FootballAppSolution.Service;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using FootballAppSolution.Common;
 
 namespace FootballAppSolution.WebApi.Controllers
 {
@@ -15,40 +16,92 @@ namespace FootballAppSolution.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPlayer([FromBody] Player player)
         {
-            if (player == null)
+            try
             {
-                return BadRequest("Player data is null.");
-            }
+                if (player == null)
+                {
+                    return BadRequest("Player data is null.");
+                }
 
-            await playerService.AddPlayer(player);
-            return Ok("Player added successfully.");
+                await playerService.AddPlayer(player);
+                return Ok("Player added successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpGet]
-        public async Task<IActionResult>  GetAllPlayers()
+        public async Task<IActionResult> GetAllPlayers()
         {
-            var players = await playerService.GetAllPlayers();
-            if (players == null || players.Count() == 0)
+            try
             {
-                return NoContent();
+                var players = await playerService.GetAllPlayers();
+                if (players == null || !players.Any())
+                {
+                    return NoContent();
+                }
+                return Ok(players);
             }
-            return Ok(players);
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPlayer(Guid id)
         {
-            var player = await playerService.GetPlayer(id);
-            if (player == null)
+            try
             {
-                return NotFound();
+                var player = await playerService.GetPlayer(id);
+                if (player == null)
+                {
+                    return NotFound();
+                }
+                return Ok(player);
             }
-            return Ok(player);
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
         
-        [HttpGet("players/{name}/{age}/{position}/{clubName}/{sortBy}/{sortOrder}/{pageNumber}/{pageSize}")]
-        public async Task<IActionResult> GetFilteredPlayers(string? name, int? age, string? position, string? clubName, string sortBy, string sortOrder, int pageNumber, int pageSize)
+        [HttpGet("/players")]
+        public async Task<IActionResult> GetFilteredPlayers([FromQuery] Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
+            
+            try
+            {
+                var filtering = new PlayerFiltering
+                {
+                    NameId = nameId,
+                    Age = age,
+                    Position = position,
+                    ClubId = clubId
+                };
+
+                var sorting = new PlayerSorting
+                {
+                    SortBy = sortBy,
+                    SortOrder = sortOrder
+                };
+
+                var paging = new PlayerPaging
+                {
+                    PageNumber = pageNumber,
+                    PageSize = pageSize
+                };
+
+                var players = await playerService.GetFilteredPlayers(filtering, sorting, paging);
+
+                return Ok(players);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
             
         }
 
@@ -56,28 +109,42 @@ namespace FootballAppSolution.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePlayer(Guid id, [FromBody] Player updatedPlayer)
         {
-            var player = await playerService.GetPlayer(id);
-            if (player == null)
+            try
             {
-                return NotFound();
-            }
+                var player = await playerService.GetPlayer(id);
+                if (player == null)
+                {
+                    return NotFound();
+                }
 
-            updatedPlayer.Id = id;
-            playerService.UpdatePlayer(updatedPlayer);
-            return Ok("Player updated successfully.");
+                updatedPlayer.Id = id;
+                await playerService.UpdatePlayer(updatedPlayer);
+                return Ok("Player updated successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePlayer(Guid id)
         {
-            var player = await playerService.GetPlayer(id);
-            if (player == null)
+            try
             {
-                return NotFound();
-            }
+                var player = await playerService.GetPlayer(id);
+                if (player == null)
+                {
+                    return NotFound();
+                }
 
-            await playerService.DeletePlayer(id);
-            return Ok("Player deleted successfully.");
+                await playerService.DeletePlayer(id);
+                return Ok("Player deleted successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }

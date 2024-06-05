@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FootballAppSolution.Common\FootballAppSolution.Common.csproj" />
     <ProjectReference Include="..\FootballAppSolution.Model\FootballAppSolution.Model.csproj" />
     <ProjectReference Include="..\FootballAppSolution.Repository.Common\FootballAppSolution.Repository.Common.csproj" />
   </ItemGroup>
