@@ -1,9 +1,6 @@
 using FootballAppSolution.Model;
 using Npgsql;
-using System;
-using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using FootballAppSolution.Common;
 using FootballAppSolution.Repository.Common;
 

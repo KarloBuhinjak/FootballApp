@@ -1,8 +1,6 @@
-using FootballAppSolution.Repository;
-using System;
-using System.Collections.Generic;
 using FootballAppSolution.Common;
 using FootballAppSolution.Model;
+using FootballAppSolution.Repository.Common;
 using FootballAppSolution.Service.Common;
 
 namespace FootballAppSolution.Service
@@ -10,8 +8,13 @@ namespace FootballAppSolution.Service
     public class PlayerService: IFootballAppService
 
     {
-    PlayerRepository playerRepository = new PlayerRepository();
-
+    
+    private readonly IFootballAppRepository playerRepository;
+        
+    public PlayerService(IFootballAppRepository playerRepository)
+    {
+        this.playerRepository = playerRepository;
+    }
     public async Task AddPlayer(Player player)
     {
         player.Id = Guid.NewGuid();

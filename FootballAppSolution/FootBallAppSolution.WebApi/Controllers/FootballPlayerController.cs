@@ -1,9 +1,7 @@
 using FootballAppSolution.Model;
-using FootballAppSolution.Service;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using FootballAppSolution.Common;
+using FootballAppSolution.Service.Common;
 
 namespace FootballAppSolution.WebApi.Controllers
 {
@@ -11,7 +9,12 @@ namespace FootballAppSolution.WebApi.Controllers
     [Route("[controller]")]
     public class FootballPlayerController : ControllerBase
     {
-        PlayerService playerService = new PlayerService();
+        private readonly IFootballAppService playerService;
+        
+        public FootballPlayerController(IFootballAppService playerService)
+        {
+            this.playerService = playerService;
+        }
         
         [HttpPost]
         public async Task<IActionResult> AddPlayer([FromBody] Player player)

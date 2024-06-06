@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sifVHbNzoukDrWBgdfhgFkqMs6W0xl46juGjHV/clX9rukEuZFuxF5VN3r/vjabwrJRud+0CmBynFteJRBL2UQ==",
+  "dgSpecHash": "HJjmx8wo2BVzJO7ovVfFnjh/jJ0WOY6A42fdg6jq9CVsZVkKY8YnFO1jDqk6hd+B+7J/eZNrSsL6K4WlXZsUNw==",
   "success": true,
   "projectFilePath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.WebApi/FootballAppSolution.WebApi.csproj",
   "expectedPackageFiles": [
+    "/Users/karlobuhinjak/.nuget/packages/autofac/8.0.0/autofac.8.0.0.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/autofac.extensions.dependencyinjection/9.0.0/autofac.extensions.dependencyinjection.9.0.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.aspnetcore.openapi/8.0.5/microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.entityframeworkcore/9.0.0-preview.3.24172.4/microsoft.entityframeworkcore.9.0.0-preview.3.24172.4.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0-preview.3.24172.4/microsoft.entityframeworkcore.abstractions.9.0.0-preview.3.24172.4.nupkg.sha512",
@@ -25,7 +27,8 @@
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/system.diagnostics.diagnosticsource/7.0.2/system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
   ],
   "logs": []
 }
