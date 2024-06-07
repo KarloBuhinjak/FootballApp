@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "HJjmx8wo2BVzJO7ovVfFnjh/jJ0WOY6A42fdg6jq9CVsZVkKY8YnFO1jDqk6hd+B+7J/eZNrSsL6K4WlXZsUNw==",
+  "dgSpecHash": "9ytgZLzRsfyHG7PhGur4PMrKeqEjSEa8VZg/IlubINJ+gFUYZ5eKETv2lnUC64Z26ijHM3FiltHYWL/kTUIWTg==",
   "success": true,
   "projectFilePath": "/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootballAppSolution.WebApi/FootballAppSolution.WebApi.csproj",
   "expectedPackageFiles": [
     "/Users/karlobuhinjak/.nuget/packages/autofac/8.0.0/autofac.8.0.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/autofac.extensions.dependencyinjection/9.0.0/autofac.extensions.dependencyinjection.9.0.0.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.aspnetcore.openapi/8.0.5/microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.entityframeworkcore/9.0.0-preview.3.24172.4/microsoft.entityframeworkcore.9.0.0-preview.3.24172.4.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.0-preview.3.24172.4/microsoft.entityframeworkcore.abstractions.9.0.0-preview.3.24172.4.nupkg.sha512",
@@ -30,5 +32,16 @@
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/system.diagnostics.diagnosticsource/7.0.2/system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 13.0.1 was resolved.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

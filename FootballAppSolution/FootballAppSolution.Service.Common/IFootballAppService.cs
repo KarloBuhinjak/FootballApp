@@ -5,7 +5,7 @@ namespace FootballAppSolution.Service.Common
 {
     public interface IFootballAppService
     {
-        Task AddPlayer(Player player);
+        Task AddPlayer(PlayerRequest player);
         Task<IEnumerable<Player>> GetAllPlayers();
         Task<Player> GetPlayer(Guid id);
         Task<IEnumerable<Player>> GetFilteredPlayers(PlayerFiltering filtering, PlayerSorting sorting, PlayerPaging paging);

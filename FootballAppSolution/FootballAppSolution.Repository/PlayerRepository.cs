@@ -10,7 +10,7 @@ namespace FootballAppSolution.Repository
     {
         private readonly string connectionString = "Host=localhost;Port=5432;Database=Football;Username=postgres;Password=lozinka;";
 
-        public async Task AddPlayer(Player player)
+        public async Task AddPlayer(PlayerRequest player)
         {
             await using var connection = new NpgsqlConnection(connectionString);
             await  connection.OpenAsync();

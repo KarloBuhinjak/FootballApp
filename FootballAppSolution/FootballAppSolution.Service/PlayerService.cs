@@ -15,7 +15,7 @@ namespace FootballAppSolution.Service
     {
         this.playerRepository = playerRepository;
     }
-    public async Task AddPlayer(Player player)
+    public async Task AddPlayer(PlayerRequest player)
     {
         player.Id = Guid.NewGuid();
         await playerRepository.AddPlayer(player);
