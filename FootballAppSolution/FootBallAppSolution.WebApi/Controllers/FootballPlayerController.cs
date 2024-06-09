@@ -51,7 +51,7 @@ namespace FootballAppSolution.WebApi.Controllers
                 {
                     return NoContent();
                 }
-                return Ok(playerResponses);
+                return Ok(players);
             }
             catch (Exception ex)
             {
@@ -80,7 +80,7 @@ namespace FootballAppSolution.WebApi.Controllers
         }
         
         [HttpGet("/players")]
-        public async Task<IActionResult> GetFilteredPlayers([FromQuery] Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetFilteredPlayers(Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
             
             try

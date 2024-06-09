@@ -98,7 +98,7 @@ namespace FootballAppSolution.Repository
             }
             if (filtering.ClubId != null)
             {
-                queryBuilder.Append(" AND \"ClubId\" IN (SELECT \"Id\" FROM \"Club\" WHERE \"Id\" = @ClubName)");
+                queryBuilder.Append(" AND \"ClubId\" IN (SELECT \"Name\" FROM \"Club\" WHERE \"Id\" = @ClubId)");
             }
             
             queryBuilder.Append($" ORDER BY \"{sorting.SortBy}\" {sorting.SortOrder}");
@@ -125,7 +125,7 @@ namespace FootballAppSolution.Repository
             }
             if (filtering.ClubId != null)
             {
-                command.Parameters.AddWithValue("@ClubName", filtering.ClubId);
+                command.Parameters.AddWithValue("@ClubId", filtering.ClubId);
             }
 
             using var reader = await command.ExecuteReaderAsync();
