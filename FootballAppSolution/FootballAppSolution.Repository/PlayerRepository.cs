@@ -10,7 +10,7 @@ namespace FootballAppSolution.Repository
     {
         private readonly string connectionString = "Host=localhost;Port=5432;Database=Football;Username=postgres;Password=lozinka;";
 
-        public async Task AddPlayer(Player player)
+        public async Task AddPlayer(PlayerRequest playerRequest)
         {
             await using var connection = new NpgsqlConnection(connectionString);
             await  connection.OpenAsync();
@@ -18,11 +18,11 @@ namespace FootballAppSolution.Repository
             var commandText = "INSERT INTO \"Player\" (\"Id\", \"Name\", \"Age\", \"Position\", \"ClubId\") VALUES (@Id, @Name, @Age, @Position, @ClubId);";
 
             await using var command = new NpgsqlCommand(commandText, connection);
-            command.Parameters.AddWithValue("@Id", player.Id);
-            command.Parameters.AddWithValue("@Name", player.Name);
-            command.Parameters.AddWithValue("@Age", player.Age);
-            command.Parameters.AddWithValue("@Position", player.Position);
-            command.Parameters.AddWithValue("@ClubId", player.ClubId);
+            command.Parameters.AddWithValue("@Id", playerRequest.Id);
+            command.Parameters.AddWithValue("@Name", playerRequest.Name);
+            command.Parameters.AddWithValue("@Age", playerRequest.Age);
+            command.Parameters.AddWithValue("@Position", playerRequest.Position);
+            command.Parameters.AddWithValue("@ClubId", playerRequest.ClubId);
 
             await command.ExecuteNonQueryAsync();
         }
@@ -98,7 +98,7 @@ namespace FootballAppSolution.Repository
             }
             if (filtering.ClubId != null)
             {
-                queryBuilder.Append(" AND \"ClubId\" IN (SELECT \"Id\" FROM \"Club\" WHERE \"Id\" = @ClubName)");
+                queryBuilder.Append(" AND \"ClubId\" IN (SELECT \"Name\" FROM \"Club\" WHERE \"Id\" = @ClubId)");
             }
             
             queryBuilder.Append($" ORDER BY \"{sorting.SortBy}\" {sorting.SortOrder}");
@@ -125,7 +125,7 @@ namespace FootballAppSolution.Repository
             }
             if (filtering.ClubId != null)
             {
-                command.Parameters.AddWithValue("@ClubName", filtering.ClubId);
+                command.Parameters.AddWithValue("@ClubId", filtering.ClubId);
             }
 
             using var reader = await command.ExecuteReaderAsync();

@@ -1,3 +1,4 @@
+using AutoMapper;
 using FootballAppSolution.Model;
 using Microsoft.AspNetCore.Mvc;
 using FootballAppSolution.Common;
@@ -10,10 +11,13 @@ namespace FootballAppSolution.WebApi.Controllers
     public class FootballPlayerController : ControllerBase
     {
         private readonly IFootballAppService playerService;
+        private readonly IMapper mapper;
         
-        public FootballPlayerController(IFootballAppService playerService)
+        public FootballPlayerController(IFootballAppService playerService, IMapper mapper)
         {
             this.playerService = playerService;
+            this.mapper = mapper;
+
         }
         
         [HttpPost]
@@ -25,8 +29,8 @@ namespace FootballAppSolution.WebApi.Controllers
                 {
                     return BadRequest("Player data is null.");
                 }
-
-                await playerService.AddPlayer(player);
+                var playerRequest = mapper.Map<PlayerRequest>(player);
+                await playerService.AddPlayer(playerRequest);
                 return Ok("Player added successfully.");
             }
             catch (Exception ex)
@@ -41,7 +45,9 @@ namespace FootballAppSolution.WebApi.Controllers
             try
             {
                 var players = await playerService.GetAllPlayers();
-                if (players == null || !players.Any())
+                var playerResponses = mapper.Map<List<PlayerResponse>>(players);
+
+                if (playerResponses == null || !playerResponses.Any())
                 {
                     return NoContent();
                 }
@@ -59,11 +65,13 @@ namespace FootballAppSolution.WebApi.Controllers
             try
             {
                 var player = await playerService.GetPlayer(id);
-                if (player == null)
+                var playerResponse = mapper.Map<PlayerResponse>(player);
+                
+                if (playerResponse == null)
                 {
                     return NotFound();
                 }
-                return Ok(player);
+                return Ok(playerResponse);
             }
             catch (Exception ex)
             {
@@ -72,7 +80,7 @@ namespace FootballAppSolution.WebApi.Controllers
         }
         
         [HttpGet("/players")]
-        public async Task<IActionResult> GetFilteredPlayers([FromQuery] Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetFilteredPlayers(Guid? nameId, [FromQuery] int? age, [FromQuery] string? position, [FromQuery] Guid? clubId, [FromQuery] string sortBy = "Name", [FromQuery] string sortOrder = "asc", [FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
             
             try

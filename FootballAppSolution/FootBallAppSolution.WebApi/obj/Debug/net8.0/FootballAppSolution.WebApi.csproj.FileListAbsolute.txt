@@ -60,3 +60,5 @@
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/FootballAppSolution.Common.pdb
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/Autofac.dll
 /Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/Autofac.Extensions.DependencyInjection.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/AutoMapper.dll
+/Users/karlobuhinjak/Desktop/FootballApp/FootballAppSolution/FootBallAppSolution.WebApi/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

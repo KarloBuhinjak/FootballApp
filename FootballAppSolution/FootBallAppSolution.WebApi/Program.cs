@@ -1,17 +1,24 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using FootballAppSolution.Repository;
 using FootballAppSolution.Repository.Common;
 using FootballAppSolution.Service;
 using FootballAppSolution.Service.Common;
+using FootballAppSolution.WebApi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-// builder.Services.AddScoped<IFootballAppService, PlayerService>();
-// builder.Services.AddScoped<IFootballAppRepository, PlayerRepository>();
+var mapperConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new AutoMapperProfile());
+});
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+// builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
@@ -25,6 +32,8 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
         .As<IFootballAppRepository>()
         .InstancePerLifetimeScope();
 });
+
+
 
 var app = builder.Build();
 
