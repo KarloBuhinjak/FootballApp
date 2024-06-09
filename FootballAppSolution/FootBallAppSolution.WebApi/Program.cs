@@ -18,7 +18,7 @@ var mapperConfig = new MapperConfiguration(mc =>
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
-// builder.Services.AddAutoMapper(typeof(Program).Assembly);
+// builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>

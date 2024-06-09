@@ -29,8 +29,8 @@ namespace FootballAppSolution.WebApi.Controllers
                 {
                     return BadRequest("Player data is null.");
                 }
-                var playerDto = mapper.Map<PlayerRequest>(player);
-                await playerService.AddPlayer(playerDto);
+                var playerRequest = mapper.Map<PlayerRequest>(player);
+                await playerService.AddPlayer(playerRequest);
                 return Ok("Player added successfully.");
             }
             catch (Exception ex)
@@ -45,11 +45,13 @@ namespace FootballAppSolution.WebApi.Controllers
             try
             {
                 var players = await playerService.GetAllPlayers();
-                if (players == null || !players.Any())
+                var playerResponses = mapper.Map<List<PlayerResponse>>(players);
+
+                if (playerResponses == null || !playerResponses.Any())
                 {
                     return NoContent();
                 }
-                return Ok(players);
+                return Ok(playerResponses);
             }
             catch (Exception ex)
             {
@@ -63,11 +65,13 @@ namespace FootballAppSolution.WebApi.Controllers
             try
             {
                 var player = await playerService.GetPlayer(id);
-                if (player == null)
+                var playerResponse = mapper.Map<PlayerResponse>(player);
+                
+                if (playerResponse == null)
                 {
                     return NotFound();
                 }
-                return Ok(player);
+                return Ok(playerResponse);
             }
             catch (Exception ex)
             {

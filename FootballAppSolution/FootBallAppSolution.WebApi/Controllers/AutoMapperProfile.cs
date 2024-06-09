@@ -10,6 +10,7 @@ public class AutoMapperProfile: Profile
     {
         CreateMap<PlayerRequest, Player>(); 
         CreateMap<Player, PlayerRequest>();
+        CreateMap<Player, PlayerResponse>();
     }
     
 }
